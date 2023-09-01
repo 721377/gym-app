@@ -3,6 +3,7 @@
     padding:0;
     list-style:none;
     text-decoration:none;
+    border: 1px red solid;
 }
 @font-face{
     font-family:'dr';
@@ -36,6 +37,7 @@ body{
         height: 90%;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
+        place-items: center;
     }
     .main .box{
         width: 290px;
@@ -58,9 +60,9 @@ body{
 
     .box i{
         font-size:30px;
-        border: 2px solid #14171e;
+        border: 2px solid #f5611a;
         border-radius:50%;
-        color:#14171e;
+        color:#f5611a;
         margin-bottom:30px;
         padding:10px;
     }

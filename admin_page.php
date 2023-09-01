@@ -77,25 +77,25 @@
        <div class="main-card">
        <div class="box">
             <i class='bx bx-user' ></i>
-           <h2>Nombre D'etudients</h2>
+           <h2>les clients</h2>
            <h1 >2</h1>
         </div>
 
         <div class="box">
             <i class='bx bx-user' ></i>
-           <h2>Nombre D'etudients</h2>
+           <h2>clients de ce mois</h2>
            <h1 >2</h1>
         </div>
 
         <div class="box">
             <i class='bx bx-user' ></i>
-           <h2>Nombre D'etudients</h2>
+           <h2>clients non paye</h2>
            <h1 >2</h1>
         </div>
 
         <div class="box">
             <i class='bx bx-user' ></i>
-           <h2>Nombre D'etudients</h2>
+           <h2>client d'esactiver</h2>
            <h1 >2</h1>
         </div>
             
