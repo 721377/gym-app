@@ -3,7 +3,7 @@
     padding:0;
     list-style:none;
     text-decoration:none;
-    border: 1px red solid;
+
 }
 @font-face{
     font-family:'dr';
@@ -47,6 +47,7 @@ body{
         box-shadow: 1px 6px 38px -6px rgba(0,0,0,0.12);
         border-radius: 40px;
         transition:0.3s ;
+        border: 1px solid #ff885124;
         
     }
    
@@ -87,6 +88,30 @@ body{
         transform: scale(1.08);
     }
    
+    @media screen and (max-width:475px){
+        .main-card{
+            width: 80%;
+            height: 90%;
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            place-items: center;
+            gap:15px;
+        }
+        .main .box{
+            width: 230px;
+            height: 180px;
+            
+        }
+        .box h2{
+            font-size: 15px;
+        }
+        
+        .box h1{
+            margin-top: 15px; 
+        }
+        
+       
+    }
 
  
    

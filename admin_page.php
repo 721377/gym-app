@@ -63,8 +63,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/shet.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
     <link rel="stylesheet" type="text/css" href="https://npmcdn.com/flatpickr/dist/themes/dark.css">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <title>dashbord</title>
 </head>
 <body>
@@ -76,25 +76,25 @@
     <section class="main">
        <div class="main-card">
        <div class="box">
-            <i class='bx bx-user' ></i>
+       <i class="bi bi-person"></i>
            <h2>les clients</h2>
            <h1 >2</h1>
         </div>
 
         <div class="box">
-            <i class='bx bx-user' ></i>
+        <i class="bi bi-person-up"></i>
            <h2>clients de ce mois</h2>
            <h1 >2</h1>
         </div>
 
         <div class="box">
-            <i class='bx bx-user' ></i>
+        <i class="bi bi-person-x"></i>
            <h2>clients non paye</h2>
            <h1 >2</h1>
         </div>
 
         <div class="box">
-            <i class='bx bx-user' ></i>
+        <i class="bi bi-person-slash"></i>
            <h2>client d'esactiver</h2>
            <h1 >2</h1>
         </div>
