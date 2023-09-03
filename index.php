@@ -1,5 +1,5 @@
 <?php
-
+include 'side.php';
 // @include 'config.php';
 
 // session_start();
@@ -29,26 +29,26 @@
 // $count = "SELECT COUNT(nam) FROM std_add";
 // $count_res = mysqli_query($conn, $count);
 // $count_display = mysqli_fetch_assoc($count_res);
- 
+
 // $sum = "SELECT SUM(prix) FROM std_add";
 // $sum_res = mysqli_query($conn, $sum);
 // $sum_display = mysqli_fetch_assoc($sum_res);
 
 
-   
+
 
 // $expire = "SELECT * FROM std_add WHERE date <= '".$expire_date."'";
 // $result_expir = mysqli_query($conn, $expire);
 
 // function nopaye($result_expir){
-    
+
 //     while($exprow = mysqli_fetch_assoc($result_expir)) { 
-  
+
 //         echo '<tr>';
 //              echo '<td>'.($exprow['nam']).'</td>';
 //             echo '<td>' .($exprow['prix']).'</td>';
 //              echo '<td>' .($exprow['date']).'</td>';
-        
+
 //              echo '</tr>';    
 //              }
 
@@ -57,6 +57,7 @@
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -67,81 +68,85 @@
     <link rel="stylesheet" type="text/css" href="https://npmcdn.com/flatpickr/dist/themes/dark.css">
     <title>dashbord</title>
 </head>
+
 <body>
 
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 
-   
+
 
     <section class="main">
-       <div class="main-card">
-       <div class="box">
-       <i class="bi bi-person"></i>
-           <h2>les clients</h2>
-           <h1 >2</h1>
-        </div>
+        <div class="main-card">
 
-        <div class="box">
-        <i class="bi bi-person-up"></i>
-           <h2>clients de ce mois</h2>
-           <h1 >2</h1>
-        </div>
+            <a href="client.php" class="box cardcolor">
+                <i class="bi bi-person"></i>
+                <h2>les clients</h2>
+                <h1>2</h1>
+            </a>
 
-        <div class="box">
-        <i class="bi bi-person-x"></i>
-           <h2>clients non paye</h2>
-           <h1 >2</h1>
-        </div>
 
-        <div class="box">
-        <i class="bi bi-person-slash"></i>
-           <h2>client d'esactiver</h2>
-           <h1 >2</h1>
+
+            <a href="client_non_payer.php" class="box cardcolor">
+                <i class="bi bi-person-x"></i>
+                <h2>clients non paye</h2>
+                <h1>2</h1>
+            </a>
+
+            <a class="box">
+                <i class="bi bi-person-up"></i>
+                <h2>clients de ce mois</h2>
+                <h1>2</h1>
+            </a>
+
+            <a class="box">
+                <i class="bi bi-person-slash"></i>
+                <h2>client d'esactiver</h2>
+                <h1>2</h1>
+            </a>
+
+
         </div>
-            
-          
-       </div>
     </section>
 
 
-       
-      
-        </div>
-<script src="./myjs/index.js"></script>
 
 
-<script>
-    flatpickr(".date", {});
-</script>
+    </div>
+    <script src="./myjs/index.js"></script>
 
 
-<script>
+    <script>
+        flatpickr(".date", {});
+    </script>
+
+
+    <script>
         const search = document.getElementById("t1");
         const rows = document.querySelectorAll("#tb tr");
-        
-        search.addEventListener("keyup", function(event){
+
+        search.addEventListener("keyup", function(event) {
             const q = event.target.value;
             rows.forEach(row => {
-                row.querySelector('td').textContent.toLowerCase().startsWith(q)
-                 ? row.style.display = ''
-                  : (row.style.display = 'none');
+                row.querySelector('td').textContent.toLowerCase().startsWith(q) ?
+                    row.style.display = '' :
+                    (row.style.display = 'none');
             });
         });
     </script>
 
     <script>
-        
         const tb_non = document.getElementById("table-two");
-      const red = document.getElementById("point")
-      var count = tb_non.rows.length-1;
-      if(count>0){
-            red.style.display="block";
-      }
-      red.innerHTML = count;
+        const red = document.getElementById("point")
+        var count = tb_non.rows.length - 1;
+        if (count > 0) {
+            red.style.display = "block";
+        }
+        red.innerHTML = count;
     </script>
-  
+
 
 
 
 </body>
+
 </html>
