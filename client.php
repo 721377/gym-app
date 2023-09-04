@@ -290,7 +290,16 @@ $select = mysqli_query($conn, "SELECT * FROM `client` ORDER BY id DESC");
 
                                     <td><?= $row['sport'] ?></td>
 
-                                    <td>activer</td>
+                                    <td><?php
+                                        $expire_date = date("Y-m-d", strtotime("-60 days"));
+                                        if ($row['dat_ins'] <= $expire_date) {
+
+                                            echo 'Desactiver';
+                                        } else {
+                                            echo 'Activer';
+                                        }
+                                        ?>
+                                    </td>
                                     <td class="switchtd">
                                         <input onclick="updateDate(<?= $row['id'] ?>) " type="checkbox" name="check" <?php
                                                                                                                         $expire_date = date("Y-m-d", strtotime("-30 days"));

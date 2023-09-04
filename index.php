@@ -1,5 +1,6 @@
 <?php
 include 'side.php';
+include 'config.php';
 // @include 'config.php';
 
 // session_start();
@@ -81,7 +82,7 @@ include 'side.php';
             <a href="client.php" class="box cardcolor">
                 <i class="bi bi-person"></i>
                 <h2>les clients</h2>
-                <h1>2</h1>
+                <h1><?php echo mysqli_num_rows(mysqli_query($conn, "SELECT * FROM client")) ?></h1>
             </a>
 
 
@@ -89,19 +90,34 @@ include 'side.php';
             <a href="client_non_payer.php" class="box cardcolor">
                 <i class="bi bi-person-x"></i>
                 <h2>clients non paye</h2>
-                <h1>2</h1>
+                <h1><?php
+                    $expire_date = date("Y-m-d", strtotime("-30 days"));
+                    $expire = mysqli_query($conn, "SELECT * FROM `client` WHERE dat_ins <= '" . $expire_date . "'");
+                    echo mysqli_num_rows($expire);
+                    ?></h1>
             </a>
 
             <a class="box">
                 <i class="bi bi-person-up"></i>
                 <h2>clients de ce mois</h2>
-                <h1>2</h1>
+                <h1><?php
+                    $date = date("Y-m-d");
+                    $month = date('m', strtotime($date));
+                    $expire = mysqli_query($conn, "SELECT * FROM `client` WHERE MONTH(dat_ins) = '$month'");
+                    echo mysqli_num_rows($expire);
+                    ?></h1>
             </a>
 
             <a class="box">
                 <i class="bi bi-person-slash"></i>
                 <h2>client d'esactiver</h2>
-                <h1>2</h1>
+                <h1><?php
+                    $expire_date = date("Y-m-d", strtotime("-60 days"));
+                    $expire = mysqli_query($conn, "SELECT * FROM `client` WHERE dat_ins <= '" . $expire_date . "'");
+                    echo mysqli_num_rows($expire);
+                    ?>
+
+                </h1>
             </a>
 
 
