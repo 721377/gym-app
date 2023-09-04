@@ -2,7 +2,7 @@
 
 session_start();
 
-if(!isset( $_SESSION['user_name'])){
+if (!isset($_SESSION['user_name'])) {
     header('location:login_form.php');
 }
 ?>
@@ -28,7 +28,7 @@ if(!isset( $_SESSION['user_name'])){
     <div class="sidebar_container" id="nav">
         <div class="logo">
             <a href="#">
-                <img src="images/logo.png" alt="">
+                <img src="img/olp.jpg" alt="">
             </a>
         </div>
         <nav>
