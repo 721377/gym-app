@@ -1,3 +1,3 @@
 <?php
 
-$conn = mysqli_connect('localhost', 'root', '', 'qym_db');
+$conn = mysqli_connect('localhost', 'root', '', 'gym_db');
