@@ -20,6 +20,8 @@ if(!isset( $_SESSION['user_name'])){
     <title>Document</title>
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
     <link rel="icon" href="images/KOI-icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+
 </head>
 
 <body>

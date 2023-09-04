@@ -47,16 +47,13 @@ if (isset($_POST['save'])) {
     $age =   $_POST['age'];
     $prix =  $_POST['prix'];
     $sport = $_POST['sport'];
-    $prix = $_POST['prix'];
     $date = $_POST['date'];
     $tele = $_POST['tele'];
 
-
+    $month = date('m', strtotime($date));
 
 
     $select = "SELECT * FROM `client` WHERE `nom_com` = ?";
-
-
     if (!mysqli_stmt_prepare($stmt, $select)) {
         $error[] = "select is failed";
     } else {
@@ -78,13 +75,29 @@ if (isset($_POST['save'])) {
             } else {
                 mysqli_stmt_bind_param($stmt, "ssssss", $name, $age, $date, $tele, $prix, $sport);
                 mysqli_stmt_execute($stmt);
+
+                $select_for_verification = mysqli_query($conn, "SELECT `id`, MONTH(date) AS month, `amout` FROM statistique ORDER BY id DESC LIMIT 1;");
+                $rows_select_for_verification = mysqli_fetch_assoc($select_for_verification);
+
+                if (mysqli_num_rows($select_for_verification) == 0) {
+                    $insert_1 = mysqli_query($conn, "INSERT INTO `statistique`(`date`, `amout`) VALUES ('$date',' $prix')");
+                } else {
+                    if ($rows_select_for_verification['month'] ==  $month) {
+                        $prix_updated = $rows_select_for_verification['amout'] + $prix;
+                        $insert_1 = mysqli_query($conn, "UPDATE `statistique` SET `amout`='$prix_updated' WHERE `date` = '$date'");
+                    } else {
+                        $insert_1 = mysqli_query($conn, "INSERT INTO `statistique`(`date`, `amout`) VALUES ('$date',' $prix')");
+                    }
+                }
+
+
                 header('location:client.php');
             }
         }
     }
 }
 
-$select = mysqli_query($conn, "SELECT * FROM `client`");
+$select = mysqli_query($conn, "SELECT * FROM `client` ORDER BY id DESC");
 
 
 
@@ -101,7 +114,6 @@ $select = mysqli_query($conn, "SELECT * FROM `client`");
     <link rel="stylesheet" type="text/css" href="https://npmcdn.com/flatpickr/dist/themes/dark.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="css/client.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
 
 </head>
 
@@ -295,10 +307,10 @@ $select = mysqli_query($conn, "SELECT * FROM `client`");
                                         <i onclick="aff_det(<?php echo $row['id']; ?>);  handeldettactio() ;" class="bi bi-eye det"></i>
                                     </td>
                                     <td>
-                                        <a href="update_client.php"><i class="bi bi-pencil-square" id="update"></i></a>
+                                        <a href="update_client.php?id=<?php echo $row['id']; ?>"><i class="bi bi-pencil-square" id="update"></i></a>
                                     </td>
                                     <td>
-                                        <a class="trash" href="delete_client.php?id=<?php echo $row['id']; ?>"><i class="bi bi-trash3"></i></a>
+                                        <i class="bi bi-trash3" onclick="deleteC(<?php echo $row['id']; ?>)"></i>
                                     </td>
                                 </tr>
 
@@ -385,12 +397,27 @@ clos.addEventListener("click",()=>{
 
     <script>
         function updateDate(id_client) {
-            console.log("true");
+            alert('voulez vous vraiment modifier la date ?');
             var xhttp = new XMLHttpRequest();
             xhttp.open("GET", "client_date.php?id_client=" + id_client, true);
             xhttp.send();
         }
     </script>
+
+
+    <script>
+        function deleteC(id_client) {
+            alert('voulez vous vraiment supprimer ?');
+            var xhttp = new XMLHttpRequest();
+            xhttp.open("GET", "delete_client.php?id=" + id_client, true);
+            xhttp.send();
+            setTimeout(() => {
+                location.reload();
+            }, "500");
+        }
+    </script>
+
+
 
 
 

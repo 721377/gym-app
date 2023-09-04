@@ -15,7 +15,6 @@ if (isset($_GET['id'])) {
         } else {
             mysqli_stmt_bind_param($stmt, "i", $code);
             mysqli_stmt_execute($stmt);
-            header('location:client.php');
         }
     } catch (Exception $e) {
         echo 'error';
