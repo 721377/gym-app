@@ -533,9 +533,10 @@ table tbody tr td {
     }
 }
 
-td a .bi-trash3 {
+td .bi-trash3 {
     color: rgb(243, 101, 101);
     font-size: 19px;
+    cursor: pointer;
 }
 
 td .bi-pencil-square {
