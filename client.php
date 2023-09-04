@@ -1,7 +1,9 @@
 <?php
+
 include 'side.php';
 include 'config.php';
 $stmt = mysqli_stmt_init($conn);
+
 
 /*
 
@@ -309,7 +311,19 @@ $select = mysqli_query($conn, "SELECT * FROM `client`");
                     </form>
                 </table>
             </div>
-            <div class=" uplod">
+            <!-- excel-dilog -->
+            
+        <dialog data-modal>
+            <form action="uploads.php" method="post" enctype="multipart/form-data">
+                <label for="file" class="file"><i class="bi bi-file-earmark-arrow-up"></i>importer votre fichier </label>
+                <input type="file" name="excel" id="file" required>
+                <div class="butt">
+                <input class="imp" type="submit" name="import" value="Importer">
+                <button class="anul" type="submit" data-close-modal>annuler</button>
+                </div>
+            </form>
+            </dialog>
+            <div class=" uplod" data-open-modal >
                 <button class="Btn">
                     <div class="sign">
                         <i class="bi bi-cloud-arrow-up"></i>
@@ -321,6 +335,20 @@ $select = mysqli_query($conn, "SELECT * FROM `client`");
             </div>
         </div>
     </div>
+
+    <script>
+
+const open = document.querySelector("[data-open-modal]");
+const clos = document.querySelector("[data-close-modal]");
+const model = document.querySelector("[data-modal]");
+
+open.addEventListener("click",()=>{
+    model.showModal();
+});
+clos.addEventListener("click",()=>{
+    model.close();
+})
+</script>
 
     <script>
         function aff_det(id_client) {
@@ -436,6 +464,9 @@ $select = mysqli_query($conn, "SELECT * FROM `client`");
 
         });
     </script>
+
+    
+
 
 
 </body>
