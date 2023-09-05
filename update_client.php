@@ -88,23 +88,23 @@ if (isset($_POST['submit'])) {
                 <div class="txt_field">
                     <input type="text" name="name" value="<?= $row['nom_com'] ?>" required id="" />
                     <span></span>
-                    <label for="">Nom comple *t</label>
+                    <label for="">Nom complet</label>
                 </div>
                 <div class="txt_field">
                     <input type="text" value="<?= $row['age'] ?>" name="age" required id="" />
                     <span></span>
-                    <label for="">Age *</label>
+                    <label for="">Age</label>
                 </div>
 
                 <div class="txt_field">
                     <input type="text" value="<?= $row['tele'] ?>" name="tele" required id="" />
                     <span></span>
-                    <label for="">tele *</label>
+                    <label for="">tele</label>
                 </div>
 
                 <div class="select">
                     <select name="sport" id="">
-                        <option value="" disabled selected>sport *</option>
+                        <option value="" disabled selected>sport</option>
                         <option value="k1">K1</option>
                         <option value="aikido">aikido</option>
                         <option value="Box">Box</option>
@@ -117,7 +117,7 @@ if (isset($_POST['submit'])) {
                 <div class="txt_field">
                     <input type="text" value="<?= $row['prix'] ?>" name="prix" id="" />
                     <span></span>
-                    <label for="">Prix *</label>
+                    <label for="">Prix</label>
                 </div>
                 <div class="txt_field">
                     <input type="date" value="<?= $row['dat_ins'] ?>" name="date" class="date" required id="" placeholder="La Date D'inscription *" />
