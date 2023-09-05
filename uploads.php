@@ -27,14 +27,13 @@ if(isset($_POST['import'])){
     $dat=$value[2];
     $tele=$value[3];
     $prix=$value[4];
+    $sport=$value[5];
 
 
     
-         $conn->query("INSERT INTO client(id,nom_com,age,dat_ins,tele,prix) values('','$nom','$age','$dat','$tele','$prix')");
+         $conn->query("INSERT INTO client(nom_com,age,dat_ins,tele,prix,sport) values('$nom','$age','$dat','$tele','$prix','$sport')");
     }
 
     header('location:client.php');
 
 }
-
-?>

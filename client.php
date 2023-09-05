@@ -455,6 +455,9 @@ $select = mysqli_query($conn, "SELECT * FROM `client` ORDER BY id DESC");
             var xhttp = new XMLHttpRequest();
             xhttp.open("GET", "client_date.php?id_client=" + id_client, true);
             xhttp.send();
+            setTimeout(() => {
+                location.reload();
+            }, "500");
         }
     </script>
 
