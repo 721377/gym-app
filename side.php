@@ -63,7 +63,7 @@ if (!isset($_SESSION['user_name'])) {
                             <ion-icon name="cog-outline"></ion-icon>
                         </div>
                         <div class="textside">
-                            <h6>Parametrs</h6>
+                            <h6>Paramètre</h6>
                         </div>
                     </a>
                 </li>
@@ -77,6 +77,18 @@ if (!isset($_SESSION['user_name'])) {
                         </div>
                         <div class="textside">
                             <h6>Statistique</h6>
+                        </div>
+                    </a>
+                </li>
+                
+                <li class="logout">
+                    <a href="logout.php">
+                        <div class="icon">
+                        <i class="bi bi-x-circle"></i>
+
+                        </div>
+                        <div class="textside">
+                            <h6>Déconnecté</h6>
                         </div>
                     </a>
                 </li>

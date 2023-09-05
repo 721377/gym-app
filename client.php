@@ -337,7 +337,7 @@ $select = mysqli_query($conn, "SELECT * FROM `client` ORDER BY id DESC");
             <!-- excel-dilog -->
 
             <dialog data-modal>
-                <form action="uploads.php" method="post" enctype="multipart/form-data">
+                <form action="upload.php" method="post" enctype="multipart/form-data">
                     <label for="file" class="file"><i class="bi bi-file-earmark-arrow-up"></i>importer votre fichier </label>
                     <input type="file" name="excel" id="file" required>
                     <div class="butt">
