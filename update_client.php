@@ -105,7 +105,7 @@ if (isset($_POST['submit'])) {
                 <div class="select">
                     <select name="sport" id="">
                         <option value="" disabled selected>sport</option>
-                        <option value="k1">K1</option>
+                        <option value="K1">K1</option>
                         <option value="aikido">aikido</option>
                         <option value="Box">Box</option>
                         <option value="musculation">musculation</option>

@@ -2,7 +2,11 @@
 include 'side.php';
 include 'config.php';
 $stmt = mysqli_stmt_init($conn);
+session_start();
 
+if (!isset($_SESSION['user_name'])) {
+  header('location:login_form.php');
+}
 
 
 

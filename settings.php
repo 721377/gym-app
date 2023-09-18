@@ -1,12 +1,18 @@
 <?php
 include 'side.php';
 include 'config.php';
+
+session_start();
+
+if (!isset($_SESSION['user_name'])) {
+    header('location:login_form.php');
+}
 $stmt = mysqli_stmt_init($conn);
 if (isset($_POST['save'])) {
-    $email = $_POST['email'];   
+    $email = $_POST['email'];
     $nom =   $_POST['name'];
     $pass =  $_POST['pass'];
-   
+
 
 
 
@@ -64,7 +70,7 @@ $select = mysqli_query($conn, "SELECT * FROM `users`");
 <body>
 
 
-    
+
     <div class="bl font1" id="form_add">
         <div class="form-cont">
             <form action="" method="post">
@@ -75,28 +81,28 @@ $select = mysqli_query($conn, "SELECT * FROM `users`");
                 </div>
 
                 <div class="txt_field">
-                    <input type="text"  placeholder="nom" id="" name="name" />
+                    <input type="text" placeholder="nom" id="" name="name" />
                     <span></span>
-                    
+
                 </div>
                 <div class="txt_field">
-                    <input type="email" placeholder="email"  required id="" name="email" />
+                    <input type="email" placeholder="email" required id="" name="email" />
                     <span></span>
-                    
+
                 </div>
 
                 <div class="txt_field">
-                    <input type="password" placeholder="mot de passe"  required id="" name="pass" />
+                    <input type="password" placeholder="mot de passe" required id="" name="pass" />
                     <span></span>
-                    
+
                 </div>
 
 
-                
 
-               
 
-                
+
+
+
 
                 <button class="btn" type="submit" name="save">
                     ajouter
@@ -155,12 +161,12 @@ $select = mysqli_query($conn, "SELECT * FROM `users`");
             <div class="title font2">
                 <h2>les profils</h2>
             </div>
-           
+
 
             <div class="tableau">
                 <table>
                     <thead>
-                        
+
                         <tr class="font1">
                             <th>nom </th>
                             <th>email</th>
@@ -171,21 +177,21 @@ $select = mysqli_query($conn, "SELECT * FROM `users`");
 
 
                     <tbody>
-                    <?php while ($row = mysqli_fetch_assoc($select)) { ?>
+                        <?php while ($row = mysqli_fetch_assoc($select)) { ?>
                             <tr>
 
                                 <td><?= $row['nom'] ?></td>
                                 <td><?= $row['email'] ?></td>
                                 <td><?= $row['pass'] ?></td>
-                                
+
                                 <td>
-                                <a class="trash" href="delete-user.php?id=<?= $row['id']?>"><i class="bi bi-trash3"></i></a>
+                                    <a class="trash" href="delete-user.php?id=<?= $row['id'] ?>"><i class="bi bi-trash3"></i></a>
                                 </td>
-                               
+
                             </tr>
-                            
+
                         <?php } ?>
-                       
+
 
 
 
@@ -198,11 +204,6 @@ $select = mysqli_query($conn, "SELECT * FROM `users`");
 
 
     <script>
-      
-
-
-
-
         const bl = document.querySelector("#form_add");
         const close = document.querySelector(".close-icon");
         const add = document.querySelector("#add");
@@ -229,8 +230,7 @@ $select = mysqli_query($conn, "SELECT * FROM `users`");
 
 
         });
-
-        </script>
+    </script>
 
 </body>
 

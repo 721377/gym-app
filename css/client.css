@@ -107,9 +107,9 @@
     font-weight: 300;
     font-family: 'dr';
 }
-.container .combobox {
+.container form .combobox {
     position: absolute;
-    top: 14%;
+    top: 16%;
     left: 40%;
     font-family: 'dr';
 }
@@ -286,17 +286,27 @@ table tbody tr td {
     transform: translate(2px, 2px);
 }
 
-.uplod {
+.aplod_container {
     position: absolute;
     left: 0.4%;
     bottom: 6%;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 30px;
 }
-.uplod .Btn:hover {
+/* 
+.aplod_container .uplod {
+    position: absolute;
+    left: 0.4%;
+    bottom: 6%;
+} */
+.aplod_container .uplod .Btn:hover {
     width: 190px;
     border-radius: 40px;
     transition-duration: 0.3s;
 }
-.uplod .Btn {
+.aplod_container .uplod .Btn {
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -321,7 +331,7 @@ table tbody tr td {
     font-weight: 600;
     transition-duration: 0.3s;
 }
-.uplod i {
+.aplod_container .uplod i {
     color: #26385e;
     font-size: 25px;
 }
@@ -482,12 +492,13 @@ table tbody tr td {
 /*respooo*/
 @media (max-width: 860px) {
     .tableau {
-        top: 170px;
+        top: 350px;
     }
 
     .container .combobox {
-        top: 15%;
-        left: 5%;
+        margin-top: 65px;
+
+        margin-left: -250px;
     }
 }
 
@@ -762,86 +773,87 @@ button:hover:after {
 }
 /* dialog-excel */
 
-dialog{
-    top:50%;
-    left:50%;
+dialog {
+    top: 50%;
+    left: 50%;
     translate: -50% -50%;
-    width:350px;
-    height:260px;
-    border:none;
+    width: 350px;
+    height: 260px;
+    border: none;
     overflow: hidden;
     background-color: #fefffe;
     border-radius: 15px;
-    filter:drop-shadow(-2px -2px 10px #00000013);
+    filter: drop-shadow(-2px -2px 10px #00000013);
 }
-dialog::backdrop{
+dialog::backdrop {
     background-color: #3b4a5c48;
     backdrop-filter: blur(5px);
 }
 
-dialog form{
+dialog form {
     position: relative;
     width: 100%;
     height: 100%;
-    margin:auto;
+    margin: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-form .file{
+form .file {
     position: relative;
-    top:55px;
-    width:250px;
-    height:50px;
+    top: 55px;
+    width: 250px;
+    height: 50px;
     display: flex;
     align-items: center;
-    justify-content:space-around;
-   
-    background-color:#fd8c58;
+    justify-content: space-around;
+
+    background-color: #fd8c58;
     border-radius: 15px;
-    color:#fff;
-    font-size: 15px;letter-spacing: 1px;
+    color: #fff;
+    font-size: 15px;
+    letter-spacing: 1px;
     cursor: pointer;
 }
-.file i{
+.file i {
     font-size: 25px;
 }
-.butt{
-    position:absolute;
-    bottom:40px;
-    width:90%;
-   height: 65px;
+.butt {
+    position: absolute;
+    bottom: 40px;
+    width: 90%;
+    height: 65px;
     display: flex;
     align-items: center;
-    justify-content:space-around;
+    justify-content: space-around;
 }
 .butt .anul,
-.butt .imp{
-    width:100px;
- height:40px;
- letter-spacing: 1px;
- text-transform: capitalize;
- display: flex;
+.butt .imp {
+    width: 100px;
+    height: 40px;
+    letter-spacing: 1px;
+    text-transform: capitalize;
+    display: flex;
     align-items: center;
     justify-content: center;
- font-size: 14px;
- border-radius: 15px;
- border: none;
- cursor: pointer;
+    font-size: 14px;
+    border-radius: 15px;
+    border: none;
+    cursor: pointer;
 }
-.anul{ 
-   background-color: #fae5ea;
- color:#e26f88;
+.anul {
+    background-color: #fae5ea;
+    color: #e26f88;
 }
-button:Hover{
-    color:#e26f88; 
+button:hover {
+    color: #e26f88;
 }
-.imp{
+.imp {
     background-color: #3eca8d;
-    color:#fff;
+    color: #fff;
 }
-input[type=file]{
+input[type='file'] {
     display: none;
 }
 

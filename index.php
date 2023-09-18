@@ -1,59 +1,13 @@
 <?php
 include 'side.php';
 include 'config.php';
-// @include 'config.php';
 
-// session_start();
+session_start();
 
-// $expire_date = date("Y-m-d" ,strtotime("-30 days"));
+if (!isset($_SESSION['user_name'])) {
+    header('location:login_form.php');
+}
 
-// if(!isset($_SESSION['admin_name'])){
-//    header('location:login_form.php');
-// }
-
-
-// if(isset($_POST['submit'])){
-// $name = $_POST['nom'];
-// $price =  $_POST['prix'];
-// $date = $_POST['date'];
-// $tele = $_POST['tele'];
-
-// $insert = "INSERT INTO std_add(nam, prix, date, tele) VALUES('$name','$price','$date','$tele')";
-//          mysqli_query($conn, $insert);
-//          header('location:admin_page.php');
-// }
-
-
-// $sql = "SELECT * FROM std_add";
-// $result = mysqli_query($conn, $sql);
-
-// $count = "SELECT COUNT(nam) FROM std_add";
-// $count_res = mysqli_query($conn, $count);
-// $count_display = mysqli_fetch_assoc($count_res);
-
-// $sum = "SELECT SUM(prix) FROM std_add";
-// $sum_res = mysqli_query($conn, $sum);
-// $sum_display = mysqli_fetch_assoc($sum_res);
-
-
-
-
-// $expire = "SELECT * FROM std_add WHERE date <= '".$expire_date."'";
-// $result_expir = mysqli_query($conn, $expire);
-
-// function nopaye($result_expir){
-
-//     while($exprow = mysqli_fetch_assoc($result_expir)) { 
-
-//         echo '<tr>';
-//              echo '<td>'.($exprow['nam']).'</td>';
-//             echo '<td>' .($exprow['prix']).'</td>';
-//              echo '<td>' .($exprow['date']).'</td>';
-
-//              echo '</tr>';    
-//              }
-
-// }
 
 ?>
 <!DOCTYPE html>

@@ -93,18 +93,17 @@ li a {
     color: #181818;
     transition: 0.2s ease-in-out;
 }
-.logout{
+.logout {
     position: absolute;
-    bottom:8px;
-    width:70px;
-    height:70px;
+    bottom: 8px;
+    width: 70px;
+    height: 70px;
     background: #f8c096;
-    color:#ff6f00;
+    color: #ff6f00;
 }
-.logout h6{
-    color:#ff6f00;
+.logout h6 {
+    color: #ff6f00;
 }
-
 
 .icon {
     width: 100%;
@@ -115,9 +114,9 @@ li a {
 ion-icon {
     font-size: 1.1em;
 }
-.logout i{
-    font-size:25px;
-    color:#ff6f00;
+.logout i {
+    font-size: 25px;
+    color: #ff6f00;
 }
 .textside {
     width: 100%;
@@ -145,7 +144,7 @@ ion-icon {
 }
 
 .mover {
-    background: rgb(243, 0, 0);
+    background: rgb(255, 255, 255);
     width: 80px;
     height: 80px;
     position: absolute;

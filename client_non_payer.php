@@ -1,8 +1,15 @@
 <?php
 include 'config.php';
 include 'side.php';
+session_start();
+
+if (!isset($_SESSION['user_name'])) {
+    header('location:login_form.php');
+}
 $expire_date = date("Y-m-d", strtotime("-30 days"));
 $expire = mysqli_query($conn, "SELECT * FROM `client` WHERE dat_ins <= '" . $expire_date . "'");
+
+
 
 ?>
 

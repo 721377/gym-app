@@ -5,6 +5,12 @@ include 'config.php';
 $stmt = mysqli_stmt_init($conn);
 
 
+session_start();
+
+if (!isset($_SESSION['user_name'])) {
+    header('location:login_form.php');
+}
+
 /*
 
 
@@ -89,8 +95,6 @@ if (isset($_POST['save'])) {
                         $insert_1 = mysqli_query($conn, "INSERT INTO `statistique`(`date`, `amout`) VALUES ('$date',' $prix')");
                     }
                 }
-
-
                 header('location:client.php');
             }
         }
@@ -346,16 +350,30 @@ $select = mysqli_query($conn, "SELECT * FROM `client` ORDER BY id DESC");
                     </div>
                 </form>
             </dialog>
-            <div class=" uplod" data-open-modal>
-                <button class="Btn">
-                    <div class="sign">
-                        <i class="bi bi-cloud-arrow-up"></i>
+            <div class="aplod_container">
+                <div class=" uplod" data-open-modal>
+                    <button class="Btn">
+                        <div class="sign">
+                            <i class="bi bi-cloud-arrow-up"></i>
 
+                        </div>
+
+                        <div class="text">Importer un excel</div>
+                    </button>
+                </div>
+                <a href="dowmload.php">
+                    <div class=" uplod" data-open-modal>
+                        <button class="Btn">
+                            <div class="sign">
+                                <i class="bi bi-file-earmark-arrow-down-fill"></i>
+                            </div>
+
+                            <div class="text">Export un excel</div>
+                        </button>
                     </div>
-
-                    <div class="text">Importer un excel</div>
-                </button>
+                </a>
             </div>
+
         </div>
     </div>
     <!-- form the sersh -->
@@ -485,8 +503,6 @@ $select = mysqli_query($conn, "SELECT * FROM `client` ORDER BY id DESC");
 
     <script>
         flatpickr(".date", {});
-
-
 
 
         const bl = document.querySelector("#form_add");

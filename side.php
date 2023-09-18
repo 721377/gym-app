@@ -1,10 +1,5 @@
 <?php
 
-session_start();
-
-if (!isset($_SESSION['user_name'])) {
-    header('location:login_form.php');
-}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -80,11 +75,11 @@ if (!isset($_SESSION['user_name'])) {
                         </div>
                     </a>
                 </li>
-                
+
                 <li class="logout">
                     <a href="logout.php">
                         <div class="icon">
-                        <i class="bi bi-x-circle"></i>
+                            <i class="bi bi-x-circle"></i>
 
                         </div>
                         <div class="textside">
